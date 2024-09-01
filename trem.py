@@ -32,7 +32,11 @@ def print_train(position):
   |_________|
 """)
 
-# Simulate the train passing on the screen
-for position in range(SCREEN_WIDTH + TRAIN_WIDTH):
-    print_train(position)
-    time.sleep(0.1)
+# Simulate the train passing on the screen from left to right and back
+for i in range(2):
+    for position in range(SCREEN_WIDTH + TRAIN_WIDTH):
+        print_train(position)
+        time.sleep(0.1)
+    for position in range(SCREEN_WIDTH + TRAIN_WIDTH - 1, -1, -1):
+        print_train(position)
+        time.sleep(0.1)
